@@ -9,6 +9,9 @@ function App() {
   // Connects socket once
   useEffect(() => {
     socket = io("http://localhost:3000");
+    socket.on('initial log', (hist) => {
+      setLog(hist.map((text) => <Text style={{borderWidth: 2, top: 500}} key={text.id}>{text}</Text>));
+    });
   }, []);
 
   // seemingly need to run this line every time log changes
@@ -26,7 +29,7 @@ function App() {
 
   return (
     <View style={styles.container}>
-      <View>{log}</View>
+      {log}
       <TextInput
         style={{height: 40, borderWidth: 2, top: 600}}
         autoCorrect={false}
