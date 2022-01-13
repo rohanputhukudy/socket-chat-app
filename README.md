@@ -8,7 +8,7 @@ $ cd server
 $ npm install
 $ npm start
 ```
-Then install dependencies and run the frontend
+Then install dependencies and run the frontend while the backend is running
 ```bash
 $ cd chat-client
 $ npm install
